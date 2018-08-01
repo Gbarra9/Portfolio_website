@@ -1,0 +1,93 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+COLOR VARIABLES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+$primary-color: #444;
+$secondary-color: #eece1a;
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MIXINS - mixins are reusable bits of code like functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+// To use mixin follow syntax: @include mixin_name(); [e.g. @include easOut();]
+@mixin easeOut {
+  // all means change all properties, .5s or half a second, motion of ease out
+  // transition takes three values property name | duration | delay
+  transition: all 0.5s ease-out;
+}
+
+/* ========================================
+TARGET ALL AND BODY
+=========================================== */
+
+* {
+  // includes padding and border in element's total width and height
+  // width/height of elmenet's box model is value specified
+  box-sizing: border-box;
+}
+
+body {
+  background: $primary-color;
+  color: #fff;
+  height: 100%; // body has height 100% at all times 
+  margin: 0; // resets body's margin to 0 (browser by default gives an elemenet default margin)
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; // defines space above/below element
+}
+
+/* ========================================
+HEADINGS
+=========================================== */
+
+// resets headings margin to 0
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  &.lg-heading {
+    // & references all parent elements relative to current element, the first ancestor element 
+    // rem unit value multiplier of html font-size (default html font-size:16px)
+    // 6rem = 96px (16*6)
+    font-size: 6rem;
+  }
+  &.sm-heading {
+    margin-bottom: 2rem; // adds nottom margin to h2 element
+    padding: 0.2rem 1rem; // gives padding to heading 2 element
+    // rgba wrapped to give background opacity value
+    background: rgba(lighten($primary-color, 2), 0.5); // lighten sass exclusive, takes two parameters (first parameter = original color, second parameter = how much to lighten og color)
+  }
+}
+
+a {
+  // target all "a" tags and set color to white and removes line decoration
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  // position fixed: element is removed from the regular document flow (elements underneath header moved upwards), fixed position elements are always relative to the document and not a particular parent
+  position: fixed; // header element will stay fixed at top even when scrolling
+  z-index: 2; // z-index creates layer for element, the higher the number the closer to the surface layer and the visibility to user
+  width: 100%; // 100% width for responsive header, will stretch across current browser width
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  // gives main element 4rem(64px) of padding 
+  padding: 4rem;
+  height: 100%;
+  .icons {
+    // add margin from top of .icons container, pushing container down 1rem
+    margin-top: 1rem;
+    a {
+      padding: 0.4rem;
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+}
