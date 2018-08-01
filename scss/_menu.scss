@@ -1,0 +1,42 @@
+// MENU BUTTON
+.menu-btn {
+  // takes container out of document flow
+  position: absolute;
+  z-index: 3;
+  right: 2.1875rem; // (2.1875rem = 35px)
+  top: 2.1875rem; // (2.1875rem = 35px)
+  cursor: pointer;
+  @include easeOut(); // transiton mixin
+  .btn-line {
+    // there are three div containers with .btn-line class, each div container has 28px width and 3px height
+    width: 1.75rem; //(1.75rem = 28px)
+    height: .1875rem; //(.1875rem = 3px;)
+    margin: 0 0 .3125rem 0; // (.3125rem = 5px) bottom margin on all divs with this class
+    background: #fff;
+    @include easeOut();
+  } // ROTATE INTO X WITH MENU LINES 
+  // Note: JS added class 'close' to div with class 'menu-btn'
+  // & refers to .menu-btn
+  &.close {
+    // rotates the btn-line 180deg
+    transform: rotate(180deg);
+    .btn-line {
+      // Line 1 - Rotate
+      // :nthchild() selects child element,takes numerical input value (numerical value indicates child element based on current order)
+      &:nth-child(1) {
+        // &:nth-child(1) targets first element/item with class of '.btn-line'
+        transform: rotate(45deg) translate(.3125rem, .3125rem); //(.3125rem = 5px)
+      } // Line 2 - Hide
+      &:nth-child(2) {
+        // &:nth-child(2) targets first element/item with class of '.btn-line'
+        opacity: 0; // opacity 0 = fully transparent, hides 2nd btn-line
+        // Line 3 - Rotate
+      }
+      &:nth-child(3) {
+        // &:nth-child(3) targets first element/item with class of '.btn-line'
+        // rotate -45deg, change inputs to 7px, -6px
+        transform: rotate(-45deg) translate(.4375rem, -.375rem); //(.4375rem = 7px, .375rem = 6px)
+      }
+    }
+  }
+}
