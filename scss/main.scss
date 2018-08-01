@@ -17,7 +17,7 @@ body {
   height: 100%; // body has height 100% at all times 
   margin: 0; // resets body's margin to 0 (browser by default gives an elemenet default margin)
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5; // defines space above/below element
+  line-height: 1.5; // defines space above/below elements, child elements inherit this value
 }
 
 /* ========================================
