@@ -1,20 +1,5 @@
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COLOR VARIABLES
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-$primary-color: #444;
-$secondary-color: #eece1a;
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-MIXINS - mixins are reusable bits of code like functions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-// To use mixin follow syntax: @include mixin_name(); [e.g. @include easOut();]
-@mixin easeOut {
-  // all means change all properties, .5s or half a second, motion of ease out
-  // transition takes three values property name | duration | delay
-  transition: all 0.5s ease-out;
-}
-
+// IMPORT PARTIALS
+@import 'config';
 /* ========================================
 TARGET ALL AND BODY
 =========================================== */
@@ -26,6 +11,7 @@ TARGET ALL AND BODY
 }
 
 body {
+  @include background();
   background: $primary-color;
   color: #fff;
   height: 100%; // body has height 100% at all times 
@@ -88,6 +74,15 @@ main {
         color: $secondary-color;
         @include easeOut();
       }
+    }
+  }
+  &#home {
+    // remove scrollbars
+    overflow: hidden;
+    h1 {
+      // viewport height is percentage of current screen's full height
+      // target h1 and pushes down 20% of current screen, siblings elements will also move down (increases overall height of main container)
+      margin-top: 20vh;
     }
   }
 }

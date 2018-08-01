@@ -1,0 +1,37 @@
+// COLOR VARIABLES & OTHER VARIABLES
+$primary-color: #444;
+$secondary-color: #eece1a;
+$show-home-images: true;
+$home-image: url(/dist/img/background.jpg);
+$background-opacity:0.9;
+// MIXINS - MIXINS ARE REUSABLE BITS OF CODE (LIKE JS FUNCTIONS)
+// To use mixin follow syntax: @include mixin_name(); [e.g. @include easOut();]
+@mixin easeOut {
+  // all means change all properties, .5s or half a second, motion of ease out
+  // transition takes three values property name | duration | delay
+  transition: all 0.5s ease-out;
+}
+
+@mixin background {
+  // if statement syntax using mixins, if $show-home-images is true then code runs inside code block
+  @if $show-home-images {
+    // & targets body (include is located in body) and searches for bg-img id
+    &#bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+      &:after // creates a pseudo element(not currently in html) after body element (psuedo element inside body element, so pseudo element a child element of body), CSS treats element as an element after body
+        {
+        // always include content when using before or after
+        content: ''; // no content desired after, so leave content inside string blank
+        position: absolute; // element removed from flow of document, position starts at nearest parent element with a relative position, if none is avaialable the document body will be the starting position
+        top: 0; // position values means side of box-element starts at the specified position
+        right: 0;
+        width: 100%; // covers 100% of current screen width and height
+        height: 100%;
+        z-index: -1; // z-index of -1 to push the overlay below other elements in the layer
+        background: rgba($primary-color, $background-opacity); // rgba provides transparency, values from declared variables above
+      }
+    }
+  }
+}
