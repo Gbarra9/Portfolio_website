@@ -3,9 +3,9 @@
   // takes container out of document flow
   position: absolute;
   z-index: 3;
-  right: 2.1875rem; // (2.1875rem = 35px)
+  right: 2.1875rem; // positions the container to the top right of the screen
   top: 2.1875rem; // (2.1875rem = 35px)
-  cursor: pointer;
+  cursor: pointer; // turns cursor into pointer when user is within .menu-btn container range
   @include easeOut(); // transiton mixin
   .btn-line {
     // there are three div containers with .btn-line class, each div container has 28px width and 3px height
@@ -37,6 +37,63 @@
         // rotate -45deg, change inputs to 7px, -6px
         transform: rotate(-45deg) translate(.4375rem, -.375rem); //(.4375rem = 7px, .375rem = 6px)
       }
+    }
+  }
+}
+
+// MENU OVERLAY
+.menu {
+  // position stays in same place even when scrolling
+  position: fixed;
+  top: 0;
+  width: 100%; //gives 100% width to menu coantainer
+  opacity: 0.9; //creates transparency effect
+  visibility: hidden; //hides menu container
+  &.show {
+    // NOTE: 'show' class gets added to menu from JS, when '.menu-btn' clicked
+    visibility: visible; //container reappears
+  }
+  &-branding,
+  &-nav {
+    // '&' refers to menu (same as 'menu-branding' or 'menu-nav')
+    // defines container as a flex container
+    display: flex; // flex-wrap controls whether the items are forced in a  singe line (default) or can flow into multiple lines (wrap/wrap-reverse) 
+    flex-flow: column wrap; // shorthand for flex-direction (column) and flex-wrap (wrap), note: column value changes original main-axis to a cross-axis
+    align-items: center; // defines how flex items are positioned along cross-axis
+    justify-content: center; // defines how flex items are positioned along main-axis
+    float: left; // floats container to left
+    width: 50%; // each container has width of 50% of current screen
+    height: 100vh; // takes entire height of current screen, each one takes up full height of current screen
+    overflow: hidden; // hide scrollbars
+  }
+  &-nav {
+    // resets margin/padding to 0
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5); // exclusive to sass, similar to lighten which takes two input values
+    list-style: none; // gets rid of bullet points
+    transform: translate3d(0, -100%, 0); // sent to the top 100% value because of negative value, when invisible, 
+    @include easeOut; // mixin transition
+    &.show {
+      // Slide in effect from top
+      transform: translate3d(0, 0, 0) // when 'menu-nav' gets a 'show' class added on, it become visible and brings element with 'menu-nav' down to normal position 
+    }
+  } // Branding Side
+  &-branding {
+    background: $primary-color;
+    @include easeOut;
+    transform: translate3d(0, 100%, 0); // pushing 'menu-branding' 100% up when not visible
+    &.show {
+      // Slide in effect from bottom
+      transform: translate3d(0, 0, 0) // brings 'menu-branding'  to normal position
+    }
+    .portrait {
+      // (15.625rem =15.625px)
+      width: 15.625rem;
+      height: 15.625rem;
+      background: url(/dist/img/portrait.jpg);
+      border-radius: 50%; // creates the circular border for image
+      border: solid 3px $secondary-color;
     }
   }
 }

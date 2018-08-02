@@ -1,27 +1,30 @@
 // SELECT DOM ITEMS
-// JS variable declarations 
-// Note: query selector grabs first element
-const menuBtn = document.querySelector('.menu-btn') // querySelector method will select input put by user, (.menu-btn is selected)
+
+// JS variable declarations and store an element value
+// NOTE: querySelector grabs first element
+// querySelector method will select input passed by user, (.menu-btn is selected)
+
+const menuBtn = document.querySelector('.menu-btn')
 const menu = document.querySelector('.menu')
 const menuNav = document.querySelector('.menu-nav')
 const menuBranding = document.querySelector('.menu-branding')
 
-// Method querySelectorAll grab all elements and puts them into node lsit(similar to an array)
+// Method querySelectorAll grab all elements with matching input and puts them into node list of elements (similar to an array)
 // Grabs all elements with class of '.nav-item'
 const navItems = document.querySelectorAll('nav-item')
 
-// Set Initial State of Menu
-// using let, variable value will be reassigned at different times 
+// SET INITIAL STATE OF MENU
+// declare a variable using let, variable value will be reassigned at different times 
 let showMenu = false
 
 // addEventListener - action will take place when clicked
 // after clicking, toggleMenu function will happen
 menuBtn.addEventListener('click', toggleMenu)
-
 // declare/define toggleMenu function
+
 function toggleMenu() {
-  // if menu is not shown, the overlay with portrait and nav items
-  // show overlay when menuBtn is clicked
+  // if menu,the overlay with portrait and nav items, is not shown
+  // then show overlay when menuBtn is clicked
   if (!showMenu) {
     // classList can be used to add class, input chosen 'close'
     menuBtn.classList.add('close')
@@ -32,7 +35,6 @@ function toggleMenu() {
     // pass the variable we want to represent as each item, variable can be given any name
     // for each item in array add show class
     navItems.forEach(item => item.classList.add('show'))
-
     // SET MENU STATE (RESET MENU STATE)
     // showMenu is true because menu overlay is open on screen
     showMenu = true
@@ -46,7 +48,6 @@ function toggleMenu() {
     // pass the variable we want to represent as each item, variable can be given any name
     // for each item in array remove show class
     navItems.forEach(item => item.classList.remove('show'))
-
     // SET MENU STATE (RESET MENU STATE)
     // showMenu is now false
     showMenu = false
