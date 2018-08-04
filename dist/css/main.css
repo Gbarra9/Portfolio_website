@@ -90,6 +90,42 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+@media screen and (max-width: 48rem) {
+  main {
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  div.menu-branding,
+  ul.menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    div.menu-branding.show,
+    ul.menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("");
+      width: 9.375rem;
+      height: 9.375rem; }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 1.5rem; } }
+
+@media screen and (max-width: 31.25rem) {
+  main#home h1 {
+    margin-top: 10vh; } }
+
+@media screen and (max-width: 20.625rem) {
+  main#home h1.lg-heading,
+  main#home h2.lg-heading,
+  main#home h3.lg-heading {
+    font-size: 5rem; } }
+
 /* ========================================
 TARGET ALL AND BODY
 =========================================== */
