@@ -12,7 +12,7 @@
     width: 1.75rem; //(1.75rem = 28px)
     height: 0.1875rem; //(.1875rem = 3px;)
     margin: 0 0 0.3125rem 0; // (.3125rem = 5px) bottom margin on all divs with this class
-    background: #fff;
+    background: set-text-color($primary-color); // call function that changes btn-line COLOR depending on the lightness of the color value
     @include easeOut();
   } // ROTATE INTO X WITH MENU LINES
   // Note: JS added class 'close' to div with class 'menu-btn'
@@ -117,7 +117,7 @@
     text-transform: uppercase;
     padding: 1rem 0; // (1rem = 16px) apply top and bottom padding
     font-weight: 300;
-    color: #fff;
+    color: set-text-color($primary-color); // call function from config partial, change nav link colors based on value passed into function parameter
     text-decoration: none;
     @include easeOut;
     &:hover {
@@ -128,7 +128,7 @@
 
 // DELAY EACH NAV ITEM SLIDE BY 0.1s
 // (Reason: the nav-items are sliding diagonally)
-// Similar to for(let x = 0; i < 4;i++)
+// Similar to JS LOOP --> for(let x = 0; i < 4;i++)
 // $x, x represents a variable name (any name) , the syntax is used as an increment
 @for $x from 1 through 4 {
   // similar to template literal/string in JS ${} --> #{}
