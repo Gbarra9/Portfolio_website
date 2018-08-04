@@ -55,7 +55,9 @@
     .menu-branding .portrait {
       width: 15.625rem;
       height: 15.625rem;
-      background: url(/dist/img/portrait.jpg);
+      background: url(/dist/img/fb_death.png);
+      background-repeat: no-repeat;
+      background-size: cover;
       border-radius: 50%;
       border: solid 3px #eece1a; }
 

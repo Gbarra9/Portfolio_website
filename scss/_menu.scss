@@ -88,10 +88,12 @@
       transform: translate3d(0, 0, 0) // brings 'menu-branding'  to normal position
     }
     .portrait {
-      // (15.625rem =15.625px)
+      // (15.625rem =250px)
       width: 15.625rem;
       height: 15.625rem;
-      background: url(/dist/img/portrait.jpg);
+      background: url(/dist/img/fb_death.png);
+      background-repeat: no-repeat;
+      background-size: cover;
       border-radius: 50%; // creates the circular border for image
       border: solid 3px $secondary-color;
     }
