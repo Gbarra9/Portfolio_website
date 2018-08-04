@@ -42,11 +42,12 @@ $background-opacity:0.9;
 }
 
 // SET TEXT COLOR 
-// Use in case $primary-color or other colors need changing
+// Use in case $primary-color or other 'color' need changing
 // include this function in the body, reference it by giving color value --> 'set-text-color()'
 // Sass function used to return a value, mixins don't return values
 // Passing an input to the argument which takes in a color variable (background-color)
 // color variable declaration can be any name, has to be declared to receive an input for parameter
+// returns color value black or white based on test
 @function set-text-color($color) {
   // if color lightness is greater than 40, return color black --> else white
   @if(lightness($color) > 40) {

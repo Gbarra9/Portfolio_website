@@ -65,15 +65,20 @@
 
 // SMARTPHONES
 @include mediaSm {
-    main#home {
-        h1 {
+    main {
+        padding: 2rem;
+        #home h1 {
             // top-margin NW
             margin-top: 10vh;
+        }
+        .lg-heading {
+            margin-top: 1rem;
+            font-size: 5rem;
         }
     }
     .projects {
         // defines row  with 1 column on smartphone screens, each grid-track takes up 25% of current container width
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
 }
 

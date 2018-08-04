@@ -185,6 +185,36 @@ WORK PAGE~~~~~~~~~
 }
 
 /* ========================================
+CONTACT PAGE~~~~~~~~~
+=========================================== */
+
+.boxes {
+  // defines container as a flex container 
+  display: flex;
+  flex-wrap: wrap; // wrap value, tries to fit flex items all on one line, the remaining flex items that cannot fit will be moved to next line
+  justify-content: space-evenly; // defines alinment of flex items along main axis, space-evenly(items distributed with equal spacing between any two items, includes space to edges)
+  align-items: center; //defines alignment of flex items along cross-axis
+  margin-top: 1rem; // 1rem (16px) 
+  div {
+    // styles to each child div of '.boxes'
+    font-size: 2rem; // 2rem (32px)
+    border: 3px #fff solid; // border around entire container
+    padding: 1.5rem 2.5rem; // 1.5rem (24px) and 2.5rem (40px) 
+    margin-bottom: 3rem; // 3rem (48px) creates bottom-margin (spacing) between the containers
+    @include easeOut; // transition mixin
+    &:hover {
+      // hover affect on div items
+      padding: 0.5rem 1.5rem; // 0.5rem (8px) 1.5rem (24px)
+      background: $secondary-color;
+      color: set-text-color($secondary-color); // value calls function 'set-text-color' and passes '$secondary-color' input to function arugment/parameter
+      span {
+        color: set-text-color($secondary-color); // Note: text color turns black, lightness of current passed color value  > 40
+      }
+    }
+  }
+}
+
+/* ========================================
 FOOTER~~~~
 =========================================== */
 

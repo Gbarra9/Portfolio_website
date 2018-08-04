@@ -223,6 +223,28 @@ WORK PAGE~~~~~~~~~
   color: #333; }
 
 /* ========================================
+CONTACT PAGE~~~~~~~~~
+=========================================== */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #eece1a;
+      color: #000; }
+      .boxes div:hover span {
+        color: #000; }
+
+/* ========================================
 FOOTER~~~~
 =========================================== */
 #main-footer {
@@ -272,10 +294,15 @@ FOOTER~~~~
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 31.25rem) {
-  main#home h1 {
-    margin-top: 10vh; }
+  main {
+    padding: 2rem; }
+    main #home h1 {
+      margin-top: 10vh; }
+    main .lg-heading {
+      margin-top: 1rem;
+      font-size: 5rem; }
   .projects {
-    grid-template-columns: repeat(1, 1fr); } }
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 20.625rem) {
   main#home h1.lg-heading,
