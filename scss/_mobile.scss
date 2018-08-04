@@ -1,9 +1,19 @@
 //DESKTOP FIRST-APPROACH MEDIA QUERIES ARE FROM LARGE SCREENS TO SMALLER SCREENS
 // WIDESCREENS
-@include mediaXlg {}
+@include mediaXlg {
+    .projects {
+        // defines row  with 4 columns on Xl screens, each grid-track takes up 25% of current container width
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 // DESKTOP & LAPTOPS
-@include mediaLg {}
+@include mediaLg {
+    .projects {
+        // defines row  with 3 columns on Desktop/Laptop screens, each grid-track takes up 25% of current container width
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
 // TABLETS & SMALL LAPTOPS
 @include mediaMd {
@@ -47,6 +57,10 @@
         grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
         grid-template-columns: 1fr; // each grid-track takes up entire width of container
     }
+    .projects {
+        // defines row  with 2 columns on Tablet/Small Laptop screens, each grid-track takes up 25% of current container width
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 // SMARTPHONES
@@ -56,6 +70,10 @@
             // top-margin NW
             margin-top: 10vh;
         }
+    }
+    .projects {
+        // defines row  with 1 column on smartphone screens, each grid-track takes up 25% of current container width
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 

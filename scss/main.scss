@@ -134,7 +134,58 @@ ABOUT PAGE~~~~~~~~~
 }
 
 /* ========================================
-ABOUT PAGE FOOTER~~~~~~~~~
+WORK PAGE~~~~~~~~~
+=========================================== */
+
+.projects {
+  display: grid;
+  grid-gap: 1.25rem; // 1.25rem (20px) creates spacing between grid items
+  grid-template-columns: repeat(3, 1fr); // specifies 3 columns per row, each grid track to take 33.33% width value of container
+  img {
+    // resizes images to fit 100% width of container
+    width: 100%;
+    border: 3px #fff solid; // creates white border around grid items (image)
+    &:hover {
+      // creates a blur on images when hovered, opacity (0 = fully transparent, 1 = fully opaque)
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut; //mixin transition
+    }
+  }
+}
+
+//BUTTON STYLES
+.btn {
+  // changes button class elements, width/height can be altered and margin/paddings can be altered
+  //  line-break not added like block display, element sit next to each other
+  // display inline-block
+  display: block; //takes up available width of current container and starts on new line 
+  padding: 0.5rem 1rem; // .5rem(8px) top/bottom padding, 1rem(16px) right/left padding
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color); //call fucntion 'set-text-color' and pass value '$secondary-color' to function argument/parameter
+  }
+}
+
+.btn-dark {
+  // Note: Extend/ Inheritance '@extend', allows sharing of CSS properties between Selectors 
+  // Helps with keeping code DRY
+  // takes CSS properties from '.btn' selector
+  @extend .btn;
+  background: darken($primary-color, 50); //darkens primary color by 50 value
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50); //darkens primary color
+  color: #333;
+}
+
+/* ========================================
+FOOTER~~~~
 =========================================== */
 
 #main-footer {
