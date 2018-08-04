@@ -11,7 +11,7 @@ const menuBranding = document.querySelector('.menu-branding')
 
 // Method querySelectorAll grab all elements with matching input and puts them into node list of elements (similar to an array)
 // Grabs all elements with class of '.nav-item'
-const navItems = document.querySelectorAll('nav-item')
+const navItems = document.querySelectorAll('.nav-item')
 
 // SET INITIAL STATE OF MENU
 // declare a variable using let, variable value will be reassigned at different times 
