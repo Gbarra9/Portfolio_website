@@ -22,7 +22,7 @@ $background-opacity:0.9;
     &#bg-img {
       // without z-index value, elements stack in the order that they appear in DOM (lowest = top of layer)
       // Elements with non-static positioning will always appear on top of elements with default static positioning.
-      background: $home-image;
+      background-image: $home-image;
       background-attachment: fixed;
       background-size: cover;
       &:after // creates a pseudo element(not currently in html) after body element (psuedo element inside body element, so pseudo element a child element of body, CSS treats element as an element after body
