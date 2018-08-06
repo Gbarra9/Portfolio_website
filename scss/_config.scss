@@ -40,3 +40,62 @@ $background-opacity:0.9;
     }
   }
 }
+
+// SET TEXT COLOR 
+// Use in case $primary-color or other 'color' need changing
+// include this function in the body, reference it by giving color value --> 'set-text-color()'
+// Sass function used to return a value, mixins don't return values
+// Passing an input to the argument which takes in a color variable (background-color)
+// color variable declaration can be any name, has to be declared to receive an input for parameter
+// returns color value black or white based on test
+@function set-text-color($color) {
+  // if color lightness is greater than 40, return color black --> else white
+  @if(lightness($color) > 40) {
+    @return #000;
+  }
+  @else {
+    @return #fff;
+  }
+}
+
+// MEDIA QUERY MIXINS
+@mixin mediaXsm {
+  // applies to media screeen less than width value of 20.625rem(330px)
+  @media screen and (max-width: 20.625rem) {
+    // anything put inside this mixin in another file will be placed inside
+    @content;
+  }
+}
+
+@mixin mediaSm {
+  // applies to media screeen less than width value of 31.25rem (500px)
+  @media screen and (max-width: 31.25rem) {
+    // anything put inside this mixin in another file will be placed inside
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  // applies to media screeen less than width value of 48rem (768px)
+  @media screen and (max-width: 48rem) {
+    // anything put inside this mixin in another file will be placed inside
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  // Creates media query range
+  // Applies to media screeen greater than width value of 48.0625rem(769px) and  media screen less than 73.125rem(1170px)
+  @media screen and (min-width: 48.0625rem) and (max-width: 31.25rem) {
+    // anything put inside this mixin in another file will be placed inside
+    @content;
+  }
+}
+
+@mixin mediaXlg {
+  // applies to media screeen greater than width value of 73.1875rem(1171px)
+  @media screen and (min-width: 73.1875rem) {
+    // anything put inside this mixin in another file will be placed inside
+    @content;
+  }
+}

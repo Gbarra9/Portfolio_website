@@ -1,0 +1,97 @@
+//DESKTOP FIRST-APPROACH MEDIA QUERIES ARE FROM LARGE SCREENS TO SMALLER SCREENS
+// WIDESCREENS
+@include mediaXlg {
+    .projects {
+        // defines row  with 4 columns on Xl screens, each grid-track takes up 25% of current container width
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+// DESKTOP & LAPTOPS
+@include mediaLg {
+    .projects {
+        // defines row  with 3 columns on Desktop/Laptop screens, each grid-track takes up 25% of current container width
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// TABLETS & SMALL LAPTOPS
+@include mediaMd {
+    main {
+        // align-items: center;
+        text-align: center; // moves inline elements the center
+        .lg-heading {
+            line-height: 1; // reduce line height to 1
+            margin-bottom: 1rem; // 1rem (16px) creates margin below h1 element
+        }
+    }
+    div.menu-branding,
+    ul.menu-nav {
+        // Takes float left away
+        float: none;
+        width: 100%;
+        min-height: 0;
+        &.show {
+            transform: translate3d(0, 0, 0)
+        }
+    }
+    .menu-branding {
+        //sets height to 25% of current screen size width (original: 100%)
+        height: 25vh;
+        transform: translate3d(100%, 0, 0); // animation coming from horizontal right from positive value
+        .portrait {
+            // reduces original width and size of portrait
+            background: url('');
+            width: 9.375rem; //9.375rem (150px)
+            height: 9.375rem;
+        }
+    }
+    .menu-nav {
+        // set height to 75% of current screen size height (original: 100%)
+        height: 75vh;
+        transform: translate3d(-100%, 0, 0); // animation coming from horizontal left from negative value
+        font-size: 1.5rem; // 1.5rem(24px)
+    }
+    .about-info {
+        // changes original grid templates to 1 column and 5 rows
+        grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+        grid-template-columns: 1fr; // each grid-track takes up entire width of container
+    }
+    .projects {
+        // defines row  with 2 columns on Tablet/Small Laptop screens, each grid-track takes up 25% of current container width
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// SMARTPHONES
+@include mediaSm {
+    main {
+        padding: 2rem;
+        #home h1 {
+            // top-margin NW
+            margin-top: 10vh;
+        }
+        .lg-heading {
+            margin-top: 1rem;
+            font-size: 5rem;
+        }
+    }
+    .projects {
+        // defines row  with 1 column on smartphone screens, each grid-track takes up 25% of current container width
+        grid-template-columns: 1fr;
+    }
+}
+
+// SMALLER SMARTPHONES
+@include mediaXsm {
+    main#home {
+        h1,
+        h2,
+        h3 {
+            &.lg-heading {
+                // targets the lg-heading and reduces font-size
+                font-size: 5rem;
+            }
+        }
+    }
+}
