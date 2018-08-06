@@ -12,7 +12,7 @@ TARGET ALL AND BODY
 }
 
 body {
-  @include background();
+  @include background;
   background: $primary-color;
   color: set-text-color($primary-color); // value calls function 'set-text-color' from config partial and passes '$primary-color' to function 
   height: 100%; // body has height 100% at all times 
@@ -74,7 +74,7 @@ main {
       padding: 0.4rem;
       &:hover {
         color: $secondary-color;
-        @include easeOut();
+        @include easeOut;
       }
     }
   }
