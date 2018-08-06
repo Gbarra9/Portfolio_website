@@ -4,7 +4,7 @@ $secondary-color: #eece1a;
 $show-home-images: true;
 // Optional linear gradient, instead of using overlay(pseudo-element &:after) --> 
 $home-image: linear-gradient( rgba($primary-color, 0.9), rgba($primary-color, 0.9)),
-url('/dist/img/background.jpg');
+url(../img/background.jpg);
 // $home-image: url('/dist/img/background.jpg');
 $background-opacity:0.9;
 // MIXINS - MIXINS ARE REUSABLE BITS OF CODE (LIKE JS FUNCTIONS)
