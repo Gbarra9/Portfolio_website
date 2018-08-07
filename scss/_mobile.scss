@@ -95,3 +95,10 @@
         }
     }
 }
+
+// Responsive Height IMPORTANT
+@include responsiveHeight {
+    main#home {
+        padding: 2rem 2rem 0;
+    }
+}

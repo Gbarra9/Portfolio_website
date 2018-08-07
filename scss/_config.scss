@@ -24,6 +24,7 @@ $background-opacity:0.9;
       background-image: $home-image;
       background-attachment: fixed;
       background-size: cover;
+      background-repeat: no-repeat;
       &:after // creates a pseudo element(not currently in html) after body element (psuedo element inside body element, so pseudo element a child element of body, CSS treats element as an element after body
         {
         // always include content when using before or after
@@ -57,7 +58,8 @@ $background-opacity:0.9;
   }
 }
 
-// MEDIA QUERY MIXINS
+// MEDIA QUERY MIXINS~~~~~~~~~~~
+// Media Query Breakpoints
 @mixin mediaXsm {
   // applies to media screeen less than width value of 20.625rem(330px)
   @media screen and (max-width: 20.625rem) {
@@ -85,7 +87,7 @@ $background-opacity:0.9;
 @mixin mediaLg {
   // Creates media query range
   // Applies to media screeen greater than width value of 48.0625rem(769px) and  media screen less than 73.125rem(1170px)
-  @media screen and (min-width: 48.0625rem) and (max-width: 31.25rem) {
+  @media screen and (min-width: 48.0625rem) and (max-width: 73.125rem) {
     // anything put inside this mixin in another file will be placed inside
     @content;
   }
@@ -95,6 +97,13 @@ $background-opacity:0.9;
   // applies to media screeen greater than width value of 73.1875rem(1171px)
   @media screen and (min-width: 73.1875rem) {
     // anything put inside this mixin in another file will be placed inside
+    @content;
+  }
+}
+
+@mixin responsiveHeight {
+  // applies to media screeen greater than width value of 37.5rem(600px)
+  @media screen and (max-height: 37.5rem) {
     @content;
   }
 }
