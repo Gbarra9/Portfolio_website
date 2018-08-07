@@ -106,7 +106,8 @@ body {
   body#bg-img {
     background-image: url("../img/background.jpg");
     background-attachment: fixed;
-    background-size: cover; }
+    background-size: cover;
+    background-repeat: no-repeat; }
     body#bg-img:after {
       content: '';
       position: absolute;
@@ -258,7 +259,7 @@ FOOTER~~~~
   .projects {
     grid-template-columns: repeat(4, 1fr); } }
 
-@media screen and (min-width: 48.0625rem) and (max-width: 31.25rem) {
+@media screen and (min-width: 48.0625rem) and (max-width: 73.125rem) {
   .projects {
     grid-template-columns: repeat(3, 1fr); } }
 
@@ -309,3 +310,7 @@ FOOTER~~~~
   main#home h2.lg-heading,
   main#home h3.lg-heading {
     font-size: 5rem; } }
+
+@media screen and (max-height: 37.5rem) {
+  main#home {
+    padding: 2rem 2rem 0; } }
