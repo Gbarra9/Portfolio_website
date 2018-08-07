@@ -314,3 +314,7 @@ FOOTER~~~~
 @media screen and (max-height: 37.5rem) {
   main#home {
     padding: 2rem 2rem 0; } }
+
+@media screen and (max-height: 25rem) {
+  .menu .nav-link {
+    font-size: 1.1rem; } }
