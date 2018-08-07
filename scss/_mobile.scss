@@ -97,8 +97,18 @@
 }
 
 // Responsive Height IMPORTANT
-@include responsiveHeight {
+@include screenHeight {
     main#home {
+        // Makes the horizontal rotation on devices more responsive
         padding: 2rem 2rem 0;
+    }
+}
+
+@include responsiveNavHeight {
+    .menu {
+        .nav-link {
+            // font-size for overlay nav items are decreased
+            font-size: 1.1rem; // (1.1rem = 17.6px)
+        }
     }
 }
