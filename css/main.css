@@ -297,17 +297,16 @@ FOOTER~~~~
   .projects {
     grid-template-columns: 1fr; }
   main#contact .boxes .email,
-  main#contact .phone,
   main#contact .resume {
-    font-size: 1.3rem; } }
+    font-size: 1.3rem; }
+  main#contact .boxes .phone {
+    font-size: 1rem; } }
 
 @media screen and (max-width: 20.625rem) {
   main#home h1.lg-heading,
   main#home h2.lg-heading,
   main#home h3.lg-heading {
-    font-size: 5rem; }
-  main#contact .boxes .phone {
-    font-size: 1rem; } }
+    font-size: 5rem; } }
 
 @media screen and (max-height: 37.5rem) {
   main#home {
