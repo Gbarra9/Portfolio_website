@@ -36,7 +36,6 @@ $background-opacity:0.9;
         height: 100vh;
         z-index: -1; // z-index of -1 to push the overlay below other elements in the layer
         background: rgba($primary-color, $background-opacity); // rgba provides transparency, opacity value determines transparency (0 = fully transparent, 1 = fully opaque)
-        overflow: hidden;
       }
     }
   }
