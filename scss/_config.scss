@@ -101,17 +101,31 @@ $background-opacity:0.9;
   }
 }
 
-@mixin screenHeight {
+@mixin screenHeightMd {
   // applies to media screeen greater than height value of 37.5rem(600px)
   @media screen and (max-height: 37.5rem) {
     @content;
   }
 }
 
-@mixin responsiveNavHeight {
+@mixin screenHeightSm {
+  // applies to media screeen greater than height value of 475px
+  @media screen and (max-height: 29.6875rem) {
+    @content;
+  }
+}
+
+@mixin screenHeightXSm {
   // applies to media screeen greater than height value of 400px
   // font-size for overlay nav items are decreased
   @media screen and (max-height: 25rem) {
+    @content;
+  }
+}
+
+@mixin screenHeightSuperXSm {
+  // applies to media screeen greater than height value of 380px
+  @media screen and (max-height: 23.75rem) {
     @content;
   }
 }

@@ -65,8 +65,11 @@ header {
 main {
   // gives main element 4rem(64px) of padding 
   padding: 4rem;
-  min-height: calc(100vh - 3.75rem); // for sticky footer, without will cause footer to move up from orginal position subtract 100vh with height of footer, height of main cannot be less than calc value
-  // height: 100%; 
+  &#contact,
+  &#work,
+  &#about {
+    min-height: calc(100vh - 3.75rem); // for sticky footer, without will cause footer to move up from orginal position subtract 100vh with height of footer, height of main cannot be less than calc value
+  } // height: 100%; 
   .icons {
     // add margin from top of .icons container, pushing container down 1rem
     margin-top: 1rem;
