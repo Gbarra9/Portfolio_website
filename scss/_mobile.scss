@@ -82,9 +82,11 @@
     }
     main#contact {
         .boxes .email,
-        .phone,
         .resume {
             font-size: 1.3rem;
+        }
+        .boxes .phone {
+            font-size: 1rem;
         }
     }
 }
@@ -99,11 +101,6 @@
                 // targets the lg-heading and reduces font-size
                 font-size: 5rem;
             }
-        }
-    }
-    main#contact {
-        .boxes .phone {
-            font-size: 1rem;
         }
     }
 }
