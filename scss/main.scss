@@ -84,7 +84,7 @@ main {
   &#home {
     // remove scrollbars
     overflow: hidden;
-    height: 100vh;
+    height: 100vh; // gives container 100% height
     h1 {
       // viewport height is percentage of current screen's full height
       // target h1 and pushes down 20% of current screen, siblings elements will also move down (increases overall height of main container)
