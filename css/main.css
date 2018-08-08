@@ -150,8 +150,9 @@ header {
   color: #eece1a; }
 
 main {
-  padding: 4rem;
-  min-height: calc(100vh - 3.75rem); }
+  padding: 4rem; }
+  main#contact, main#work, main#about {
+    min-height: calc(100vh - 3.75rem); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -313,8 +314,32 @@ FOOTER~~~~
 
 @media screen and (max-height: 37.5rem) {
   main#home {
-    padding: 2rem 2rem 0; } }
+    padding: 1.5rem 1.5rem 0rem; } }
+
+@media screen and (max-height: 29.6875rem) {
+  main#home h1.lg-heading {
+    font-size: 4rem; }
+  main#home h2.sm-heading {
+    font-size: 1.2rem; } }
 
 @media screen and (max-height: 25rem) {
+  .menu .menu-branding .portrait {
+    width: 6.875rem;
+    height: 6.875rem; }
   .menu .nav-link {
-    font-size: 1.1rem; } }
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: .8rem; }
+  main#home h1.lg-heading {
+    margin-top: 18vh;
+    font-size: 3.7rem; }
+  main#home h2.sm-heading {
+    font-size: 1.1rem;
+    margin-bottom: 1.7rem; } }
+
+@media screen and (max-height: 23.75rem) {
+  main#home h1.lg-heading {
+    font-size: 3.3rem; }
+  main#home h2.sm-heading {
+    font-size: 1rem;
+    margin-bottom: 1.4rem; } }
