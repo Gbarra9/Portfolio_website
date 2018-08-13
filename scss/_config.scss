@@ -60,6 +60,7 @@ $background-opacity:0.9;
 
 // MEDIA QUERY MIXINS~~~~~~~~~~~
 // Media Query Breakpoints
+// Media Query Breakpoints WIDTH
 @mixin mediaXsm {
   // applies to media screeen less than width value of 20.625rem(330px)
   @media screen and (max-width: 20.625rem) {
@@ -101,6 +102,7 @@ $background-opacity:0.9;
   }
 }
 
+// Media Query Breakpoints Height
 @mixin screenHeightMd {
   // applies to media screeen greater than height value of 37.5rem(600px)
   @media screen and (max-height: 37.5rem) {
