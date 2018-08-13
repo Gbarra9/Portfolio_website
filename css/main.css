@@ -249,7 +249,9 @@ FOOTER~~~~
 
 @media screen and (min-width: 73.1875rem) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+  .boxes div {
+    margin: 0 1rem 3rem 1rem; } }
 
 @media screen and (min-width: 48.0625rem) and (max-width: 73.125rem) {
   .projects {
