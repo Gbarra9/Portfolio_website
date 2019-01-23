@@ -5,6 +5,9 @@
         // defines row  with 4 columns on Xl screens, each grid-track takes up 25% of current container width
         grid-template-columns: repeat(4, 1fr);
     }
+    .boxes div {
+        margin: 0 1rem 3rem 1rem;
+    }
 }
 
 // DESKTOP & LAPTOPS
@@ -53,8 +56,8 @@
         font-size: 1.5rem; // 1.5rem(24px)
     }
     .about-info {
-        // changes original grid templates to 1 column and 5 rows
-        grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+        // changes original grid templates to 1 column and 2 rows
+        grid-template-areas: 'bioimage' 'bio';
         grid-template-columns: 1fr; // each grid-track takes up entire width of container
     }
     .projects {
@@ -80,6 +83,15 @@
         // defines row  with 1 column on smartphone screens, each grid-track takes up 25% of current container width
         grid-template-columns: 1fr;
     }
+    main#contact {
+        .boxes .email,
+        .resume {
+            font-size: 1.3rem;
+        }
+        .boxes .phone {
+            font-size: 1rem;
+        }
+    }
 }
 
 // SMALLER SMARTPHONES
@@ -92,6 +104,68 @@
                 // targets the lg-heading and reduces font-size
                 font-size: 5rem;
             }
+        }
+    }
+}
+
+// RESPONSIVE HEIGHT IMPORTANT
+@include screenHeightMd {
+    // applies to media screeen greater than height value of 37.5rem(600px)
+    main#home {
+        // Makes the horizontal rotation on devices more responsive
+        // Padding values 1st value: top 1.5rem(24px), 2nd value: right/left 1.5rem (24px) and 3rd value: bottom value 0rem 
+        padding: 1.5rem 1.5rem 0rem;
+    }
+}
+
+@include screenHeightSm {
+    // applies to media screeen greater than height value of 475px
+    main#home {
+        h1.lg-heading {
+            font-size: 4rem;
+        }
+        h2.sm-heading {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@include screenHeightXSm {
+    // applies to media screeen greater than height value of 400px
+    .menu {
+        .menu-branding .portrait {
+            // change width/height of portrait on specified height
+            width: 6.875rem;
+            height: 6.875rem;
+        }
+        .nav-link {
+            // font-size for overlay nav items are decreased
+            font-size: 1.2rem; // (1.2em = 19.2px)
+            font-weight: 400;
+            padding: .8rem;
+        }
+    }
+    main#home {
+        h1.lg-heading {
+            margin-top: 18vh;
+            font-size: 3.7rem;
+        }
+        h2.sm-heading {
+            font-size: 1.1rem;
+            margin-bottom: 1.7rem;
+        }
+    }
+}
+
+@include screenHeightSuperXSm {
+    // applies to media screeen greater than height value of 380px
+    main#home {
+        h1.lg-heading {
+            font-size: 3.3rem;
+        }
+        h2.sm-heading {
+            font-size: 1rem;
+            margin-bottom: 1.4rem;
         }
     }
 }

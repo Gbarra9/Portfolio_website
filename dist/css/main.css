@@ -104,9 +104,23 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
+<<<<<<< HEAD
     background-image: linear-gradient(rgba(68, 68, 68, 0.9), rgba(68, 68, 68, 0.9)), url("../img/background.jpg");
+=======
+    background-image: url("../img/background.jpg");
+>>>>>>> 19489d1dee7ef10eff119d4c847b2009bc57b761
     background-attachment: fixed;
-    background-size: cover; }
+    background-size: cover;
+    background-repeat: no-repeat; }
+    body#bg-img:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      background: rgba(68, 68, 68, 0.9); }
 
 /* ========================================
 HEADINGS
@@ -140,8 +154,9 @@ header {
   color: #eece1a; }
 
 main {
-  padding: 4rem;
-  min-height: calc(100vh - 3.75rem); }
+  padding: 4rem; }
+  main#contact, main#work, main#about {
+    min-height: calc(100vh - 3.75rem); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -150,7 +165,8 @@ main {
         color: #eece1a;
         transition: all 0.5s ease-out; }
   main#home {
-    overflow: hidden; }
+    overflow: hidden;
+    height: 100vh; }
     main#home h1 {
       margin-top: 20vh; }
 
@@ -160,8 +176,8 @@ ABOUT PAGE~~~~~~~~~
 .about-info {
   display: grid;
   grid-gap: 1.875rem;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-areas: 'bioimage bio';
+  grid-template-columns: repeat(2, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
     margin: auto;
@@ -170,16 +186,6 @@ ABOUT PAGE~~~~~~~~~
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
-  .about-info .job-1 {
-    grid-area: job1; }
-  .about-info .job-2 {
-    grid-area: job2; }
-  .about-info .job-3 {
-    grid-area: job3; }
-  .about-info .job {
-    background: #515151;
-    padding: 0.5rem;
-    border-bottom: #eece1a 5px solid; }
 
 /* ========================================
 WORK PAGE~~~~~~~~~
@@ -247,9 +253,11 @@ FOOTER~~~~
 
 @media screen and (min-width: 73.1875rem) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+  .boxes div {
+    margin: 0 1rem 3rem 1rem; } }
 
-@media screen and (min-width: 48.0625rem) and (max-width: 31.25rem) {
+@media screen and (min-width: 48.0625rem) and (max-width: 73.125rem) {
   .projects {
     grid-template-columns: repeat(3, 1fr); } }
 
@@ -279,7 +287,7 @@ FOOTER~~~~
     transform: translate3d(-100%, 0, 0);
     font-size: 1.5rem; }
   .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-areas: 'bioimage' 'bio';
     grid-template-columns: 1fr; }
   .projects {
     grid-template-columns: repeat(2, 1fr); } }
@@ -293,10 +301,47 @@ FOOTER~~~~
       margin-top: 1rem;
       font-size: 5rem; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  main#contact .boxes .email,
+  main#contact .resume {
+    font-size: 1.3rem; }
+  main#contact .boxes .phone {
+    font-size: 1rem; } }
 
 @media screen and (max-width: 20.625rem) {
   main#home h1.lg-heading,
   main#home h2.lg-heading,
   main#home h3.lg-heading {
     font-size: 5rem; } }
+
+@media screen and (max-height: 37.5rem) {
+  main#home {
+    padding: 1.5rem 1.5rem 0rem; } }
+
+@media screen and (max-height: 29.6875rem) {
+  main#home h1.lg-heading {
+    font-size: 4rem; }
+  main#home h2.sm-heading {
+    font-size: 1.2rem; } }
+
+@media screen and (max-height: 25rem) {
+  .menu .menu-branding .portrait {
+    width: 6.875rem;
+    height: 6.875rem; }
+  .menu .nav-link {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: .8rem; }
+  main#home h1.lg-heading {
+    margin-top: 18vh;
+    font-size: 3.7rem; }
+  main#home h2.sm-heading {
+    font-size: 1.1rem;
+    margin-bottom: 1.7rem; } }
+
+@media screen and (max-height: 23.75rem) {
+  main#home h1.lg-heading {
+    font-size: 3.3rem; }
+  main#home h2.sm-heading {
+    font-size: 1rem;
+    margin-bottom: 1.4rem; } }

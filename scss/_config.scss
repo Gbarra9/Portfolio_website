@@ -2,10 +2,8 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
 $show-home-images: true;
-// Optional linear gradient, instead of using overlay(pseudo-element &:after) --> 
-$home-image: linear-gradient( rgba($primary-color, 0.9), rgba($primary-color, 0.9)),
-url('../img/background.jpg');
-// $home-image: url('/dist/img/background.jpg');
+// Optional linear gradient, instead of using overlay(pseudo-element &:after) --> $home-image: linear-gradient( rgba($primary-color, 0.9), rgba($primary-color, 0.9)), url('../img/background.jpg');
+$home-image: url('../img/background.jpg');
 $background-opacity:0.9;
 // MIXINS - MIXINS ARE REUSABLE BITS OF CODE (LIKE JS FUNCTIONS)
 // Declare mixin by following the syntax: @mixin mixin_name{code goes here}
@@ -25,18 +23,20 @@ $background-opacity:0.9;
       // Elements with non-static positioning will always appear on top of elements with default static positioning.
       background-image: $home-image;
       background-attachment: fixed;
-      background-size: cover; // &:after // creates a pseudo element(not currently in html) after body element (psuedo element inside body element, so pseudo element a child element of body, CSS treats element as an element after body
-      //   {
-      //   // always include content when using before or after
-      //   content: ''; // no content desired after, so leave content inside string blank
-      //   position: absolute; // element removed from flow of document, position starts at nearest parent element with a relative position, if none is avaialable the document body will be the starting position
-      //   top: 0; // position values means side of box-element starts at the specified position
-      //   right: 0;
-      //   width: 100%; // covers 100% of current screen width and height
-      //   height: 100%;
-      //   z-index: -1; // z-index of -1 to push the overlay below other elements in the layer
-      //   background: rgba($primary-color, $background-opacity); // rgba provides transparency, opacity value determines transparency (0 = fully transparent, 1 = fully opaque)
-      // }
+      background-size: cover;
+      background-repeat: no-repeat;
+      &:after // creates a pseudo element(not currently in html) after body element (psuedo element inside body element, so pseudo element a child element of body, CSS treats element as an element after body
+        {
+        // always include content when using before or after
+        content: ''; // no content desired after, so leave content inside string blank
+        position: absolute; // element removed from flow of document, position starts at nearest parent element with a relative position, if none is avaialable the document body will be the starting position
+        top: 0; // position values means side of box-element starts at the specified position
+        right: 0;
+        width: 100%; // covers 100% of current screen width and height
+        height: 100vh;
+        z-index: -1; // z-index of -1 to push the overlay below other elements in the layer
+        background: rgba($primary-color, $background-opacity); // rgba provides transparency, opacity value determines transparency (0 = fully transparent, 1 = fully opaque)
+      }
     }
   }
 }
@@ -58,7 +58,9 @@ $background-opacity:0.9;
   }
 }
 
-// MEDIA QUERY MIXINS
+// MEDIA QUERY MIXINS~~~~~~~~~~~
+// Media Query Breakpoints
+// Media Query Breakpoints WIDTH
 @mixin mediaXsm {
   // applies to media screeen less than width value of 20.625rem(330px)
   @media screen and (max-width: 20.625rem) {
@@ -86,7 +88,7 @@ $background-opacity:0.9;
 @mixin mediaLg {
   // Creates media query range
   // Applies to media screeen greater than width value of 48.0625rem(769px) and  media screen less than 73.125rem(1170px)
-  @media screen and (min-width: 48.0625rem) and (max-width: 31.25rem) {
+  @media screen and (min-width: 48.0625rem) and (max-width: 73.125rem) {
     // anything put inside this mixin in another file will be placed inside
     @content;
   }
@@ -96,6 +98,36 @@ $background-opacity:0.9;
   // applies to media screeen greater than width value of 73.1875rem(1171px)
   @media screen and (min-width: 73.1875rem) {
     // anything put inside this mixin in another file will be placed inside
+    @content;
+  }
+}
+
+// Media Query Breakpoints Height
+@mixin screenHeightMd {
+  // applies to media screeen greater than height value of 37.5rem(600px)
+  @media screen and (max-height: 37.5rem) {
+    @content;
+  }
+}
+
+@mixin screenHeightSm {
+  // applies to media screeen greater than height value of 475px
+  @media screen and (max-height: 29.6875rem) {
+    @content;
+  }
+}
+
+@mixin screenHeightXSm {
+  // applies to media screeen greater than height value of 400px
+  // font-size for overlay nav items are decreased
+  @media screen and (max-height: 25rem) {
+    @content;
+  }
+}
+
+@mixin screenHeightSuperXSm {
+  // applies to media screeen greater than height value of 380px
+  @media screen and (max-height: 23.75rem) {
     @content;
   }
 }
