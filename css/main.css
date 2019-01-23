@@ -104,11 +104,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-<<<<<<< HEAD
     background-image: linear-gradient(rgba(68, 68, 68, 0.9), rgba(68, 68, 68, 0.9)), url("../img/background.jpg");
-=======
-    background-image: url("../img/background.jpg");
->>>>>>> 19489d1dee7ef10eff119d4c847b2009bc57b761
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat; }
